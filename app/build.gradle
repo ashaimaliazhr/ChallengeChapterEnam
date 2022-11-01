@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -81,4 +83,8 @@ dependencies {
     testImplementation "org.mockito:mockito-core:4.5.1"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
     testImplementation "io.mockk:mockk:1.12.4"
+
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 }
