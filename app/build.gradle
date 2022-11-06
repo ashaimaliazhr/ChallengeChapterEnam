@@ -2,10 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'kotlin-parcelize'
+    id "kotlin-android-extensions"
     id 'dagger.hilt.android.plugin'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -17,8 +15,9 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     lintOptions {
         abortOnError false
@@ -29,10 +28,39 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            debuggable true
+            applicationIdSuffix ".debug"
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            applicationIdSuffix ".release"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    flavorDimensions "version"
+    productFlavors {
+        paid {
+            dimension "version"
+            applicationIdSuffix ".paid"
+            versionCode 1
+            versionName "1.0"
+        }
+        free {
+            dimension "version"
+            applicationIdSuffix ".free"
+            versionCode 1
+            versionName "1.0"
+        }
+        demo {
+            dimension "version"
+            applicationIdSuffix ".demo"
+            versionCode 1
+            versionName "1.0"
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -41,12 +69,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
 
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -87,4 +118,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
+
+    //testing
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "androidx.test:core:1.4.0"
 }

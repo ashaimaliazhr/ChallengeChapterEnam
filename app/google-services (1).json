@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "250882195465",
-    "project_id": "listeningmoviebinar-69141",
-    "storage_bucket": "listeningmoviebinar-69141.appspot.com"
+    "project_number": "478862662067",
+    "project_id": "listeningmoviebinar",
+    "storage_bucket": "listeningmoviebinar.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:250882195465:android:f630ecec347c8aa1fcb8d8",
+        "mobilesdk_app_id": "1:478862662067:android:37d5e0017d1d52655493c6",
         "android_client_info": {
           "package_name": "asha.binar.challengechapterenam"
         }
       },
       "oauth_client": [
         {
-          "client_id": "250882195465-cd1d2heu5nb3aj1htih875lmtbg1rbl4.apps.googleusercontent.com",
+          "client_id": "478862662067-7mqo9o01big071utoe46v1idingdderd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVtIkLRgF2ueZsftlGRt9OcTJ6s0pRO5Y"
+          "current_key": "AIzaSyCnOrrNlOEAPht75yJfzzALB85668k29aM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "250882195465-cd1d2heu5nb3aj1htih875lmtbg1rbl4.apps.googleusercontent.com",
+              "client_id": "478862662067-7mqo9o01big071utoe46v1idingdderd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
